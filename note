@@ -1,0 +1,22 @@
+dotnet tool install -g dotnet-aspnet-codegenerator
+
+Microsoft.VisualStudio.Web.CodeGeneration.Design
+
+Microsoft.EntityFrameworkCore.SqlServer
+
+dotnet aspnet-codegenerator identity -dc twofact.Data.ApplicationDbContext --files "Account.Manage.EnableAuthenticator;Account.LoginWith2fa”
+
+https://davidshimjs.github.io/qrcodejs/
+
+<script>
+    $(()=>{
+        var qrcode = new QRCode(document.getElementById("qrCode"), {
+            text: "@Html.Raw(Model.AuthenticatorUri)",
+            width: 128,
+            height: 128,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    })
+    </script>
